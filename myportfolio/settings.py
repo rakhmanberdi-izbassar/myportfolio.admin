@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'core',  # біздің қосымшамыз
+    'core', 
+    'portfolio',
 ]
 
 MIDDLEWARE = [
