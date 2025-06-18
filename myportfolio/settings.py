@@ -80,13 +80,14 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rakhman1_portfolio',
-        'USER': 'rakhman1_myportfolio',
-        'PASSWORD': '12345',
-        'HOST': 'srv-db-pgsql01.ps.kz:5432',  # немесе сервер IP
-        'PORT': 'xT@c0p194',       # PostgreSQL-дің стандартты порты
+        'NAME': 'portfolio_q2lk',
+        'USER': 'rakhmanberdi',
+        'PASSWORD': 'A2Kg7chlAskLRnp8jBtPC9v5zIPiivLL',
+        'HOST': 'dpg-d199sgp5pdvs73e4dirg-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
+
 
 
 
