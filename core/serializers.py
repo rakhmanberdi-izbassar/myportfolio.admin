@@ -6,6 +6,7 @@ from portfolio.models import Brand, Testimonial, TestimonialSection
 from .models import ContactMessage
 from .models import Hero
 from .models import Experience
+from .models import SocialLink
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -64,9 +65,15 @@ class HeroSerializer(serializers.ModelSerializer):
         if obj.image:
             return obj.image.url
         return None
-
+    
 
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Experience
+        fields = '__all__'
+
+
+class SocialLinkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SocialLink
         fields = '__all__'

@@ -69,3 +69,14 @@ class Experience(models.Model):
 
     def __str__(self):
         return f"{self.position} at {self.company}"
+# models.py
+
+from django.db import models
+
+class SocialLink(models.Model):
+    icon = models.CharField(max_length=100)  # Мысалы: "fa-brands:linkedin-in"
+    iconBgClass = models.CharField(max_length=100)  # Мысалы: "linkedin"
+    href = models.URLField()
+
+    def __str__(self):
+        return self.href

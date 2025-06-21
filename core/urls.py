@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProjectListView, SkillListView, AboutDetailView, ContactMessageView, HeroDetailView, ExperienceListView
+from .views import ProjectListView, SkillListView, AboutDetailView, ContactMessageView, HeroDetailView, ExperienceListView, SocialLinkListView
 from .views import BrandListView, TestimonialView
 
 urlpatterns = [
@@ -11,5 +11,5 @@ urlpatterns = [
     path('testimonials/', TestimonialView.as_view()),
     path('hero/', HeroDetailView.as_view()),
     path('experience/', ExperienceListView.as_view()),
-
+    path('api/social-links/', SocialLinkListView.as_view(), name='social-links'),
 ]

@@ -7,7 +7,8 @@ from portfolio.models import Brand, Testimonial, TestimonialSection
 from portfolio.serializers import BrandSerializer, TestimonialSerializer, TestimonialSectionSerializer
 from .models import Hero
 from .serializers import HeroSerializer, ExperienceSerializer
-
+from .models import SocialLink
+from .serializers import SocialLinkSerializer
 
 
 class ProjectListView(APIView):
@@ -65,4 +66,10 @@ class ExperienceListView(APIView):
     def get(self, request):
         experiences = Experience.objects.order_by('-start_date')
         serializer = ExperienceSerializer(experiences, many=True)
+        return Response(serializer.data)
+
+class SocialLinkListView(APIView):
+    def get(self, request):
+        links = SocialLink.objects.all()
+        serializer = SocialLinkSerializer(links, many=True)
         return Response(serializer.data)
