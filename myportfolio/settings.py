@@ -152,4 +152,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://myportfolio-react.onrender.com",
+    "https://rakhmanberdi.vercel.app",
 ]
+
