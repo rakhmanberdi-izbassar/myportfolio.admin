@@ -39,12 +39,22 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'rest_framework',
     'core', 
     'portfolio',
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
 ]
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'day7kb5k5',
+    'API_KEY': '984752869173279',
+    'API_SECRET': 'y5g9fjoGKeK_LtgZRGyHpdEdcRc',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
