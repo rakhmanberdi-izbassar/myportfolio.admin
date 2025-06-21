@@ -20,6 +20,7 @@ class Skill(models.Model):
         return self.name
 
 class About(models.Model):
+    name = models.CharField(max_length=100)
     bio = models.TextField()
     email = models.EmailField()
     telegram = models.URLField(blank=True)
