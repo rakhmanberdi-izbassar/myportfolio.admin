@@ -40,10 +40,24 @@ class ContactMessage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
+from django.db import models
+
 class Hero(models.Model):
-    title = models.CharField(max_length=255)
-    subtitle = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='hero/')
+    image = models.ImageField(upload_to="hero/")
+    name = models.CharField(max_length=100, default="Rakhmanberdi Izbassar")
+    title = models.CharField(max_length=255)  # heading
+    subtitle = models.CharField(max_length=255)  # typingText-тің бір бөлігі
+    typing_text_1 = models.CharField(max_length=255, default="I'm a Full-Stack Developer")
+    typing_delay_1 = models.IntegerField(default=1500)
+    typing_text_2 = models.CharField(max_length=255, default="I'm a UI/UX Designer")
+    typing_delay_2 = models.IntegerField(default=1500)
+    description = models.TextField(default="I specialize in crafting intuitive digital experiences...")
+    btn_text = models.CharField(max_length=100, default="Get in touch")
+    btn_url = models.CharField(max_length=100, default="contactus")
+
+    def __str__(self):
+        return self.name
+
 
 
 class Experience(models.Model):

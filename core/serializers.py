@@ -44,9 +44,27 @@ class ContactMessageSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class HeroSerializer(serializers.ModelSerializer):
+    typingText = serializers.SerializerMethodField()
+    imgUrl = serializers.SerializerMethodField()
+
     class Meta:
         model = Hero
-        fields = '__all__'
+        fields = [
+            "name", "title", "subtitle", "description",
+            "btn_text", "btn_url", "typingText", "imgUrl"
+        ]
+
+    def get_typingText(self, obj):
+        return [
+            obj.typing_text_1, obj.typing_delay_1,
+            obj.typing_text_2, obj.typing_delay_2
+        ]
+
+    def get_imgUrl(self, obj):
+        if obj.image:
+            return obj.image.url
+        return None
+
 
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
